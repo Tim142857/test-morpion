@@ -1,0 +1,22 @@
+{
+  "mainBranch": "main",
+  "mergeMethod": "squash",
+  "roleStrategy": "balancedRandom",
+  "maxReviewCycles": 3,
+  "maxPrePrFixCycles": 3,
+  "maxTestDisputeCycles": 2,
+  "maxInfrastructureRetries": 1,
+  "agentTimeoutMs": 1800000,
+  "commandTimeoutMs": 120000,
+  "worktreeDirectory": ".ai-worktrees",
+  "epicSource": "docs/epics",
+  "stateDirectory": ".ai-orchestrator/state",
+  "validationCommands": [
+    "git diff --check"
+  ],
+  "gitCommand": "git",
+  "githubCommand": "gh",
+  "codexCommand": "codex",
+  "cursorCommand": "agent",
+  "npmCommand": "npm"
+}
