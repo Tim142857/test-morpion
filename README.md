@@ -4,7 +4,7 @@ Application web statique pour le jeu de morpion, construite avec React, TypeScri
 
 ## Prérequis
 
-- [Node.js](https://nodejs.org/) 20 LTS ou version ultérieure
+- [Node.js](https://nodejs.org/) `^20.19.0` ou `>=22.12.0` (compatible avec Vite 7)
 - npm (fourni avec Node.js)
 
 ## Commandes npm
