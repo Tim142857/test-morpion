@@ -12,6 +12,12 @@ Fournir une fondation React et TypeScript fiable, entièrement statique, adapté
 
 ### US-01.01 - Initialiser la SPA React
 
+<!-- ai-orchestrator:completion:US-01.01 -->
+Status: DONE
+Pull Request: #1
+Developer: cursor
+Reviewer: codex
+<!-- /ai-orchestrator:completion:US-01.01 -->
 En tant que développeur, je veux disposer d'une application React avec TypeScript, Vite et npm, afin de développer le jeu sur une base homogène.
 
 DependsOn: None
