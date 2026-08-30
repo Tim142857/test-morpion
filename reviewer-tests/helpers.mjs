@@ -158,3 +158,28 @@ export function listDistFiles() {
   const distRoot = join(repositoryRoot, 'dist')
   return allFiles(distRoot).map((file) => relative(distRoot, file).replace(/\\/g, '/'))
 }
+
+export function listWorkflowFiles() {
+  const workflowsDirectory = join(repositoryRoot, '.github', 'workflows')
+  if (!existsSync(workflowsDirectory)) return []
+
+  return allFiles(workflowsDirectory).filter((file) => ['.yml', '.yaml'].includes(extname(file)))
+}
+
+export function readWorkflowFiles() {
+  return listWorkflowFiles().map((absolutePath) => ({
+    path: relative(repositoryRoot, absolutePath).replace(/\\/g, '/'),
+    content: readFileSync(absolutePath, 'utf8'),
+  }))
+}
+
+export function findQualityWorkflows(workflows = readWorkflowFiles()) {
+  return workflows.filter(({ content }) => {
+    const runsLint = /\bnpm\s+run\s+lint\b/.test(content)
+    const runsTypecheck = /\bnpm\s+run\s+typecheck\b/.test(content)
+    const hasPullRequestTrigger = /\bon:\s*[\s\S]*?\bpull_request\b/m.test(content)
+    const hasMainPushTrigger = /\bon:\s*[\s\S]*?\bpush\b[\s\S]*?\bmain\b/m.test(content)
+
+    return runsLint && runsTypecheck && hasPullRequestTrigger && hasMainPushTrigger
+  })
+}
