@@ -49,6 +49,12 @@ Acceptance Criteria:
 
 ### US-01.03 - Contrôler automatiquement la qualité de base
 
+<!-- ai-orchestrator:completion:US-01.03 -->
+Status: DONE
+Pull Request: #3
+Developer: codex
+Reviewer: cursor
+<!-- /ai-orchestrator:completion:US-01.03 -->
 En tant qu'équipe produit, je veux exécuter les contrôles essentiels à chaque contribution, afin de détecter les régressions structurelles avant fusion.
 
 DependsOn: US-01.01
