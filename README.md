@@ -25,7 +25,8 @@ npm install
 npm run dev
 ```
 
-Ouvrez l’URL affichée dans le terminal (par défaut `http://localhost:5173`).
+Ouvrez l’application sous le chemin de base GitHub Pages :
+`http://localhost:5173/test-morpion/` par défaut.
 
 ## Build de production
 
@@ -34,6 +35,20 @@ npm run build
 ```
 
 Les artefacts statiques sont générés dans le répertoire `dist/`.
+
+Pour valider localement ces artefacts avec le même chemin de base que sur
+GitHub Pages :
+
+```bash
+npm run preview
+```
+
+Ouvrez ensuite `http://localhost:4173/test-morpion/` par défaut.
+
+## GitHub Pages
+
+Vite utilise le chemin de base `/test-morpion/`. L’application publiée est
+disponible à l’adresse <https://tim142857.github.io/test-morpion/>.
 
 ## Architecture
 

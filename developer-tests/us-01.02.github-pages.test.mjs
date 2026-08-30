@@ -8,6 +8,19 @@ import { build, loadConfigFromFile } from 'vite'
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const githubPagesBase = '/test-morpion/'
 
+test('le README documente les URL locales avec le chemin de base GitHub Pages', () => {
+  const readme = readFileSync(join(repositoryRoot, 'README.md'), 'utf8')
+  const packageJson = JSON.parse(
+    readFileSync(join(repositoryRoot, 'package.json'), 'utf8'),
+  )
+
+  assert.match(readme, /http:\/\/localhost:5173\/test-morpion\//)
+  assert.match(readme, /http:\/\/localhost:4173\/test-morpion\//)
+  assert.match(readme, /https:\/\/tim142857\.github\.io\/test-morpion\//)
+  assert.match(packageJson.scripts.dev, /--configLoader runner/)
+  assert.match(packageJson.scripts.preview, /--configLoader native/)
+})
+
 test('Vite utilise le chemin de base du site de projet GitHub Pages', async () => {
   const loadedConfig = await loadConfigFromFile(
     { command: 'build', mode: 'production' },
