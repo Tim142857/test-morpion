@@ -31,6 +31,12 @@ Acceptance Criteria:
 
 ### US-01.02 - Garantir le fonctionnement sur GitHub Pages
 
+<!-- ai-orchestrator:completion:US-01.02 -->
+Status: DONE
+Pull Request: #2
+Developer: codex
+Reviewer: cursor
+<!-- /ai-orchestrator:completion:US-01.02 -->
 En tant que visiteur, je veux pouvoir ouvrir et recharger l'application déployée, afin d'y accéder sans erreur de chemin.
 
 DependsOn: US-01.01
