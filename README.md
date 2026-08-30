@@ -50,6 +50,21 @@ Ouvrez ensuite `http://localhost:4173/test-morpion/` par défaut.
 Vite utilise le chemin de base `/test-morpion/`. L’application publiée est
 disponible à l’adresse <https://tim142857.github.io/test-morpion/>.
 
+Chaque fusion sur `main` déclenche le workflow GitHub Actions `.github/workflows/quality.yml` :
+lint et vérification TypeScript. Si ces contrôles réussissent, le workflow
+`.github/workflows/deploy.yml` publie automatiquement le contenu de `dist/` sur
+GitHub Pages.
+
+Avant fusion, validez localement les mêmes étapes que la CI :
+
+```bash
+npm ci
+npm run lint
+npm run typecheck
+npm run build
+npm run preview
+```
+
 ## Architecture
 
 Cette application est une SPA entièrement statique : elle ne nécessite ni API, ni serveur applicatif, ni base de données après compilation.

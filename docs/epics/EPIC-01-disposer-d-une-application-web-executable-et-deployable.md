@@ -67,6 +67,12 @@ Acceptance Criteria:
 
 ### US-01.04 - Publier automatiquement sur GitHub Pages
 
+<!-- ai-orchestrator:completion:US-01.04 -->
+Status: DONE
+Pull Request: #4
+Developer: cursor
+Reviewer: codex
+<!-- /ai-orchestrator:completion:US-01.04 -->
 En tant que responsable produit, je veux déployer la version validée après chaque fusion sur main, afin de maintenir une version publique à jour.
 
 DependsOn: US-01.02, US-01.03
